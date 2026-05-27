@@ -6,7 +6,7 @@
   <title>2026 대광고 중학생 진로체험 신청</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -15,22 +15,20 @@
     }
 
     :root {
-      --green-950: #0b2f1d;
-      --green-900: #103d27;
-      --green-800: #165134;
-      --green-700: #1f6b45;
-      --green-600: #2a8c5a;
-      --green-500: #38b875;
-      --green-100: #e9f8ef;
-      --green-50: #f5fcf8;
-      --gold: #f4c95d;
-      --gold-deep: #c89b2c;
-      --red: #e14b4b;
-      --ink: #14231b;
-      --muted: #5e7568;
-      --soft: #dceee4;
+      --pink: #ff8fb7;
+      --pink-deep: #ff5f9e;
+      --pink-soft: #fff0f6;
+      --purple: #a78bfa;
+      --lavender: #f2ecff;
+      --mint: #8ee6d1;
+      --cream: #fffaf0;
+      --yellow: #ffe08a;
+      --blue: #9bd7ff;
+      --ink: #3b3341;
+      --muted: #7e7087;
       --white: #ffffff;
-      --shadow: 0 26px 80px rgba(6, 50, 29, 0.18);
+      --line: rgba(255, 255, 255, 0.72);
+      --shadow: 0 26px 70px rgba(172, 91, 140, 0.22);
     }
 
     html {
@@ -41,282 +39,273 @@
       min-height: 100vh;
       font-family: 'Noto Sans KR', sans-serif;
       color: var(--ink);
+      padding: 22px 14px 38px;
       background:
-        radial-gradient(circle at 15% 10%, rgba(244, 201, 93, 0.22), transparent 28%),
-        radial-gradient(circle at 85% 20%, rgba(56, 184, 117, 0.24), transparent 30%),
-        linear-gradient(135deg, #eef8f2 0%, #f8fbf7 42%, #e5f4eb 100%);
-      padding: 28px 16px;
+        radial-gradient(circle at 10% 8%, rgba(255, 224, 138, 0.8), transparent 24%),
+        radial-gradient(circle at 86% 10%, rgba(167, 139, 250, 0.58), transparent 26%),
+        radial-gradient(circle at 12% 88%, rgba(142, 230, 209, 0.62), transparent 24%),
+        linear-gradient(135deg, #fff7fb 0%, #f7efff 38%, #effaff 100%);
       overflow-x: hidden;
     }
 
-    body::before,
-    body::after {
+    body::before {
       content: '';
       position: fixed;
-      border-radius: 999px;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.95) 0 2px, transparent 2.4px),
+        radial-gradient(circle, rgba(255,143,183,0.18) 0 1.5px, transparent 2px);
+      background-size: 46px 46px, 72px 72px;
+      background-position: 0 0, 18px 24px;
+      opacity: 0.75;
+      z-index: 0;
+    }
+
+    .decor {
+      position: fixed;
       pointer-events: none;
       z-index: 0;
-      filter: blur(2px);
+      filter: drop-shadow(0 16px 24px rgba(172, 91, 140, 0.12));
+      opacity: 0.95;
     }
 
-    body::before {
-      width: 420px;
-      height: 420px;
-      top: -190px;
-      left: -130px;
-      background: rgba(42, 140, 90, 0.16);
-    }
-
-    body::after {
-      width: 520px;
-      height: 520px;
-      right: -220px;
-      bottom: -230px;
-      background: rgba(244, 201, 93, 0.18);
-    }
+    .decor.star1 { top: 7%; left: 6%; font-size: 42px; transform: rotate(-14deg); }
+    .decor.star2 { top: 16%; right: 7%; font-size: 34px; transform: rotate(12deg); }
+    .decor.heart1 { bottom: 13%; left: 8%; font-size: 38px; transform: rotate(10deg); }
+    .decor.flower1 { bottom: 9%; right: 8%; font-size: 48px; transform: rotate(-8deg); }
 
     .page {
       position: relative;
       z-index: 1;
-      width: min(1080px, 100%);
+      width: min(980px, 100%);
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.03fr 0.97fr;
-      gap: 26px;
-      align-items: stretch;
-    }
-
-    .hero,
-    .form-card {
-      border-radius: 34px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
     }
 
     .hero {
       position: relative;
-      min-height: 740px;
-      padding: 42px;
-      color: var(--white);
+      min-height: 300px;
+      padding: 38px 26px 94px;
+      border-radius: 38px 38px 0 0;
       background:
-        linear-gradient(155deg, rgba(11, 47, 29, 0.95), rgba(22, 81, 52, 0.9)),
-        radial-gradient(circle at 80% 15%, rgba(244, 201, 93, 0.42), transparent 36%);
-      isolation: isolate;
+        linear-gradient(135deg, rgba(255, 143, 183, 0.92), rgba(167, 139, 250, 0.82)),
+        radial-gradient(circle at 85% 18%, rgba(255,255,255,0.55), transparent 28%);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      color: white;
+      text-align: center;
     }
 
     .hero::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(120deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 80px),
-        linear-gradient(30deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 70px);
-      opacity: 0.65;
-      z-index: -2;
+      width: 260px;
+      height: 260px;
+      left: -88px;
+      bottom: -110px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.22);
     }
 
     .hero::after {
       content: '';
       position: absolute;
-      width: 320px;
-      height: 320px;
-      right: -86px;
-      bottom: -92px;
+      width: 210px;
+      height: 210px;
+      right: -70px;
+      top: -80px;
       border-radius: 50%;
-      background: linear-gradient(135deg, rgba(56, 184, 117, 0.45), rgba(244, 201, 93, 0.2));
-      z-index: -1;
+      background: rgba(255, 224, 138, 0.35);
     }
 
-    .eyebrow {
+    .ribbon {
+      position: relative;
+      z-index: 1;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 9px 16px;
-      border: 1px solid rgba(255,255,255,0.22);
+      gap: 8px;
+      padding: 9px 17px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.24);
+      border: 1px solid rgba(255,255,255,0.38);
       backdrop-filter: blur(12px);
       font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-    }
-
-    .eyebrow-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 20px rgba(244, 201, 93, 0.95);
-    }
-
-    .hero-title {
-      margin-top: 52px;
-      font-family: 'Noto Serif KR', serif;
-      font-size: clamp(42px, 6vw, 70px);
-      line-height: 1.06;
-      letter-spacing: -0.06em;
-      font-weight: 900;
-    }
-
-    .hero-title span {
-      display: block;
-      color: #93f0b9;
-    }
-
-    .hero-desc {
-      margin-top: 24px;
-      max-width: 440px;
-      font-size: 17px;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.78);
-      word-break: keep-all;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 34px;
-    }
-
-    .hero-badge {
-      padding: 11px 15px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.16);
-      font-size: 13px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.9);
-    }
-
-    .info-panel {
-      position: absolute;
-      left: 42px;
-      right: 42px;
-      bottom: 42px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .info-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 17px 18px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.16);
-      backdrop-filter: blur(16px);
-    }
-
-    .info-icon {
-      flex: 0 0 auto;
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 15px;
-      background: rgba(244, 201, 93, 0.2);
-      color: var(--gold);
-      font-size: 20px;
-    }
-
-    .info-title {
-      font-size: 13px;
-      color: rgba(255,255,255,0.64);
-      margin-bottom: 3px;
-    }
-
-    .info-text {
-      font-size: 15px;
       font-weight: 800;
-      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      margin-top: 24px;
+      font-family: 'Gowun Dodum', sans-serif;
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 1.14;
+      letter-spacing: -0.06em;
+      text-shadow: 0 10px 28px rgba(113, 57, 107, 0.22);
+    }
+
+    .hero h1 strong {
+      display: block;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 800;
+      color: #fff8c9;
+    }
+
+    .hero p {
+      position: relative;
+      z-index: 1;
+      margin: 18px auto 0;
+      max-width: 540px;
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.9);
       word-break: keep-all;
     }
 
-    .form-card {
-      background: rgba(255,255,255,0.88);
-      border: 1px solid rgba(255,255,255,0.78);
-      backdrop-filter: blur(18px);
+    .badge-row {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 24px;
     }
 
-    .form-top {
-      padding: 34px 34px 20px;
+    .badge {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.86);
+      color: #ba4f85;
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 10px 20px rgba(126, 68, 126, 0.12);
+    }
+
+    .form-shell {
+      position: relative;
+      margin-top: -58px;
+      border-radius: 34px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(22px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .form-shell::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.64), rgba(255,255,255,0.36)),
+        radial-gradient(circle at 12% 10%, rgba(255, 143, 183, 0.16), transparent 28%),
+        radial-gradient(circle at 88% 20%, rgba(142, 230, 209, 0.18), transparent 26%);
+      pointer-events: none;
+    }
+
+    .form-inner {
+      position: relative;
+      padding: 30px;
+    }
+
+    .form-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 22px;
     }
 
     .form-kicker {
-      color: var(--green-700);
-      font-size: 13px;
-      font-weight: 800;
+      color: var(--pink-deep);
+      font-size: 12px;
+      font-weight: 900;
       letter-spacing: 0.08em;
     }
 
     .form-title {
-      margin-top: 8px;
-      font-family: 'Noto Serif KR', serif;
-      font-size: 30px;
-      line-height: 1.25;
+      margin-top: 5px;
+      font-size: 25px;
+      font-weight: 900;
       letter-spacing: -0.04em;
-      color: var(--green-950);
+      color: var(--ink);
     }
 
-    .form-subtitle {
-      margin-top: 9px;
+    .mini-card {
+      min-width: 130px;
+      padding: 14px 16px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #fff8cf, #fff);
+      border: 1px solid rgba(255,255,255,0.86);
+      text-align: center;
+      box-shadow: 0 14px 26px rgba(172, 91, 140, 0.12);
+    }
+
+    .mini-card b {
+      display: block;
+      color: #e34f93;
+      font-size: 18px;
+    }
+
+    .mini-card span {
+      display: block;
+      margin-top: 2px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 11.5px;
+      font-weight: 800;
     }
 
     .progress {
-      margin-top: 20px;
-      height: 8px;
+      height: 10px;
+      margin-bottom: 24px;
       border-radius: 999px;
-      background: #e4f1e9;
+      background: rgba(255,255,255,0.78);
       overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.9);
     }
 
     .progress-bar {
-      width: 34%;
+      width: 12%;
       height: 100%;
       border-radius: inherit;
-      background: linear-gradient(90deg, var(--green-600), var(--gold));
+      background: linear-gradient(90deg, var(--pink), var(--purple), var(--mint));
       transition: width 0.25s ease;
     }
 
-    .form-body {
-      padding: 8px 34px 34px;
-    }
-
-    .notice-box {
-      margin-bottom: 24px;
+    .notice {
+      margin-bottom: 22px;
       padding: 18px;
-      border: 1px solid #cae6d4;
-      border-radius: 22px;
-      background: linear-gradient(135deg, #f4fcf7, #eaf8ef);
+      border-radius: 25px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(255,255,255,0.88);
+      box-shadow: 0 16px 32px rgba(172, 91, 140, 0.1);
     }
 
     .notice-title {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
+      color: var(--pink-deep);
       font-size: 14px;
-      font-weight: 800;
-      color: var(--green-800);
+      font-weight: 900;
     }
 
-    .notice-text {
+    .notice p {
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.75;
+      line-height: 1.72;
       word-break: keep-all;
     }
 
     .consent-label {
-      margin-top: 13px;
+      position: relative;
       display: flex;
       align-items: center;
       gap: 10px;
+      margin-top: 14px;
       cursor: pointer;
       user-select: none;
     }
@@ -330,30 +319,30 @@
     }
 
     .check-ui {
-      width: 22px;
-      height: 22px;
+      width: 23px;
+      height: 23px;
       display: grid;
       place-items: center;
-      border-radius: 8px;
-      border: 2px solid #b7dcc6;
-      background: var(--white);
+      border-radius: 9px;
+      background: white;
+      border: 2px solid #ffc0d9;
       transition: 0.2s;
     }
 
     .check-ui svg {
-      width: 13px;
-      height: 13px;
+      width: 14px;
+      height: 14px;
+      fill: none;
       stroke: white;
       stroke-width: 3;
-      fill: none;
       opacity: 0;
       transform: scale(0.6);
       transition: 0.2s;
     }
 
     .consent-label input:checked + .check-ui {
-      background: var(--green-700);
-      border-color: var(--green-700);
+      border-color: var(--pink-deep);
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
     }
 
     .consent-label input:checked + .check-ui svg {
@@ -361,42 +350,53 @@
       transform: scale(1);
     }
 
-    .consent-copy {
+    .consent-text {
+      color: var(--ink);
       font-size: 13.5px;
-      font-weight: 700;
-      color: var(--green-900);
+      font-weight: 800;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
     }
 
     .section {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+    }
+
+    .section.full {
+      grid-column: 1 / -1;
     }
 
     .label-row {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       margin-bottom: 8px;
     }
 
     .field-label {
+      color: var(--ink);
       font-size: 13px;
-      font-weight: 800;
-      color: var(--green-950);
+      font-weight: 900;
     }
 
     .required {
-      color: var(--gold-deep);
-      font-size: 12px;
-      font-weight: 800;
+      color: var(--pink-deep);
+      font-size: 11.5px;
+      font-weight: 900;
     }
 
     .input-field {
       width: 100%;
-      height: 52px;
+      height: 54px;
       padding: 0 16px;
-      border: 1.5px solid #d4eadd;
-      border-radius: 17px;
-      background: rgba(245, 252, 248, 0.9);
+      border: 1px solid rgba(255,255,255,0.95);
+      border-radius: 19px;
+      background: rgba(255,255,255,0.78);
+      box-shadow: 0 12px 24px rgba(172, 91, 140, 0.08);
       color: var(--ink);
       font: inherit;
       font-size: 15px;
@@ -405,19 +405,13 @@
     }
 
     .input-field::placeholder {
-      color: #9cb0a5;
+      color: #b2a6b8;
     }
 
     .input-field:focus {
-      border-color: var(--green-500);
-      background: var(--white);
-      box-shadow: 0 0 0 4px rgba(56, 184, 117, 0.13);
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      border-color: rgba(255, 95, 158, 0.55);
+      background: white;
+      box-shadow: 0 0 0 5px rgba(255, 143, 183, 0.16), 0 12px 24px rgba(172, 91, 140, 0.1);
     }
 
     .choice-group {
@@ -432,23 +426,24 @@
     }
 
     .choice-ui {
-      height: 52px;
+      height: 54px;
       display: grid;
       place-items: center;
-      border: 1.5px solid #d4eadd;
-      border-radius: 17px;
-      background: rgba(245, 252, 248, 0.9);
+      border-radius: 19px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(255,255,255,0.95);
       color: var(--muted);
       font-size: 15px;
-      font-weight: 800;
+      font-weight: 900;
+      box-shadow: 0 12px 24px rgba(172, 91, 140, 0.08);
       transition: 0.2s ease;
     }
 
     .choice input:checked + .choice-ui {
-      background: linear-gradient(135deg, var(--green-700), var(--green-600));
-      border-color: var(--green-700);
-      color: var(--white);
-      box-shadow: 0 12px 24px rgba(31, 107, 69, 0.18);
+      color: white;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      box-shadow: 0 16px 30px rgba(255, 95, 158, 0.24);
+      transform: translateY(-1px);
     }
 
     .select-wrap {
@@ -458,23 +453,23 @@
     .select-wrap::after {
       content: '⌄';
       position: absolute;
-      right: 16px;
+      right: 18px;
       top: 50%;
-      transform: translateY(-54%);
-      color: var(--green-700);
-      font-size: 18px;
+      transform: translateY(-55%);
+      color: var(--pink-deep);
+      font-size: 20px;
       pointer-events: none;
     }
 
     select.input-field {
       appearance: none;
-      padding-right: 44px;
       cursor: pointer;
+      padding-right: 48px;
     }
 
     .program-options {
       display: grid;
-      gap: 11px;
+      gap: 12px;
     }
 
     .program-card {
@@ -487,23 +482,24 @@
       grid-template-columns: auto 1fr auto;
       gap: 13px;
       align-items: center;
-      min-height: 78px;
+      min-height: 82px;
       padding: 15px;
-      border: 1.5px solid #d4eadd;
-      border-radius: 21px;
-      background: rgba(245, 252, 248, 0.9);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(255,255,255,0.95);
+      box-shadow: 0 14px 28px rgba(172, 91, 140, 0.1);
       cursor: pointer;
       transition: 0.2s ease;
     }
 
-    .program-datebox {
-      width: 58px;
-      height: 58px;
+    .date-bubble {
+      width: 62px;
+      height: 62px;
       display: grid;
       place-items: center;
-      border-radius: 18px;
-      background: var(--green-100);
-      color: var(--green-800);
+      border-radius: 21px;
+      background: linear-gradient(135deg, #fff0f6, #f2ecff);
+      color: var(--pink-deep);
       font-size: 12px;
       font-weight: 900;
       line-height: 1.22;
@@ -511,40 +507,42 @@
     }
 
     .program-meta {
+      display: block;
       margin-bottom: 4px;
+      color: var(--purple);
       font-size: 12px;
       font-weight: 900;
-      color: var(--green-600);
     }
 
     .program-title {
-      font-size: 14.5px;
-      line-height: 1.45;
-      font-weight: 800;
+      display: block;
       color: var(--ink);
+      font-size: 14.5px;
+      font-weight: 900;
+      line-height: 1.45;
       word-break: keep-all;
     }
 
-    .program-status {
-      padding: 6px 9px;
+    .status {
+      padding: 7px 10px;
       border-radius: 999px;
-      background: #eaf8ef;
-      color: var(--green-700);
+      background: var(--pink-soft);
+      color: var(--pink-deep);
       font-size: 11px;
       font-weight: 900;
       white-space: nowrap;
     }
 
     .program-card input:checked + .program-ui {
-      border-color: var(--green-600);
-      background: var(--white);
-      box-shadow: 0 16px 34px rgba(31, 107, 69, 0.16);
-      transform: translateY(-1px);
+      background: white;
+      border-color: rgba(255, 95, 158, 0.56);
+      box-shadow: 0 20px 38px rgba(255, 95, 158, 0.2);
+      transform: translateY(-2px);
     }
 
-    .program-card input:checked + .program-ui .program-status {
-      background: var(--green-700);
-      color: var(--white);
+    .program-card input:checked + .program-ui .status {
+      color: white;
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
     }
 
     .program-card.closed {
@@ -553,51 +551,49 @@
 
     .program-card.closed .program-ui {
       cursor: not-allowed;
-      background: #f1f1f1;
-      border-color: #d5d5d5;
+      background: rgba(240,240,240,0.78);
     }
 
-    .program-card.closed .program-datebox {
-      background: #e8e8e8;
-      color: #888;
+    .program-card.closed .date-bubble {
+      color: #999;
+      background: #eeeeee;
     }
 
-    .program-card.closed .program-status {
+    .program-card.closed .status {
+      color: #d44b4b;
       background: #fff0f0;
-      color: var(--red);
     }
 
     .submit-btn {
       position: relative;
       width: 100%;
-      height: 60px;
+      height: 62px;
       margin-top: 8px;
       border: none;
-      border-radius: 20px;
-      background: linear-gradient(135deg, var(--green-700), var(--green-950));
-      color: var(--white);
+      border-radius: 23px;
+      color: white;
+      background: linear-gradient(135deg, #ff72aa, #a78bfa 55%, #75dcca);
+      box-shadow: 0 20px 36px rgba(255, 95, 158, 0.28);
       font: inherit;
       font-size: 16px;
       font-weight: 900;
-      letter-spacing: -0.01em;
       cursor: pointer;
-      box-shadow: 0 18px 32px rgba(16, 61, 39, 0.22);
-      transition: 0.2s ease;
       overflow: hidden;
+      transition: 0.22s ease;
     }
 
     .submit-btn::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.34), transparent);
       transform: translateX(-100%);
       transition: 0.55s ease;
     }
 
     .submit-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 22px 40px rgba(16, 61, 39, 0.28);
+      box-shadow: 0 24px 44px rgba(255, 95, 158, 0.34);
     }
 
     .submit-btn:hover::before {
@@ -606,7 +602,7 @@
 
     .submit-btn:disabled {
       cursor: not-allowed;
-      background: #aab6af;
+      background: #c9c1cb;
       box-shadow: none;
       transform: none;
     }
@@ -614,51 +610,54 @@
     .footer-copy {
       margin-top: 18px;
       text-align: center;
-      color: #7b9285;
+      color: var(--muted);
       font-size: 12px;
       line-height: 1.6;
     }
 
     .success-overlay {
       display: none;
-      min-height: 540px;
-      padding: 46px 34px;
+      position: relative;
+      padding: 48px 28px;
+      min-height: 520px;
       align-items: center;
       justify-content: center;
       text-align: center;
     }
 
-    .success-inner {
-      width: 100%;
-      padding: 42px 24px;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #f5fcf8, #eaf8ef);
-      border: 1px solid #ccebd8;
+    .success-box {
+      width: min(440px, 100%);
+      padding: 46px 26px;
+      border-radius: 32px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(255,255,255,0.95);
+      box-shadow: 0 20px 44px rgba(172, 91, 140, 0.14);
     }
 
     .success-icon {
-      width: 86px;
-      height: 86px;
+      width: 88px;
+      height: 88px;
       margin: 0 auto 22px;
       display: grid;
       place-items: center;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--green-600), var(--green-800));
+      background: linear-gradient(135deg, var(--pink), var(--purple));
       color: white;
-      box-shadow: 0 18px 34px rgba(31, 107, 69, 0.25);
+      box-shadow: 0 18px 36px rgba(255, 95, 158, 0.26);
     }
 
     .success-title {
-      font-family: 'Noto Serif KR', serif;
-      color: var(--green-950);
-      font-size: 30px;
+      color: var(--ink);
+      font-family: 'Gowun Dodum', sans-serif;
+      font-size: 34px;
+      letter-spacing: -0.05em;
       margin-bottom: 10px;
     }
 
     .success-text {
       color: var(--muted);
       font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.75;
       word-break: keep-all;
     }
 
@@ -666,21 +665,21 @@
       position: fixed;
       left: 50%;
       bottom: 24px;
-      transform: translateX(-50%) translateY(20px);
+      z-index: 20;
       min-width: 280px;
       max-width: calc(100% - 32px);
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(11, 47, 29, 0.94);
+      padding: 14px 17px;
+      border-radius: 18px;
+      background: rgba(59, 51, 65, 0.94);
       color: white;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
       text-align: center;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.24);
+      box-shadow: 0 18px 40px rgba(59, 51, 65, 0.24);
       opacity: 0;
+      transform: translateX(-50%) translateY(20px);
       pointer-events: none;
       transition: 0.22s ease;
-      z-index: 20;
     }
 
     .toast.show {
@@ -688,154 +687,134 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    @media (max-width: 940px) {
+    @media (max-width: 720px) {
       body {
-        padding: 18px 12px 32px;
+        padding: 14px 10px 32px;
       }
 
-      .page {
+      .decor {
+        opacity: 0.45;
+      }
+
+      .hero {
+        min-height: 330px;
+        padding: 34px 20px 90px;
+        border-radius: 30px 30px 0 0;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 14.5px;
+      }
+
+      .form-shell {
+        margin-top: -54px;
+        border-radius: 29px;
+      }
+
+      .form-inner {
+        padding: 24px 18px 26px;
+      }
+
+      .form-head {
         grid-template-columns: 1fr;
-        gap: 18px;
       }
 
-      .hero {
-        min-height: auto;
-        padding: 34px 26px 28px;
-      }
-
-      .hero-title {
-        margin-top: 34px;
-      }
-
-      .hero-desc {
-        font-size: 15px;
-      }
-
-      .info-panel {
-        position: static;
-        margin-top: 36px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .hero,
-      .form-card {
-        border-radius: 26px;
-      }
-
-      .hero {
-        padding: 30px 22px 24px;
-      }
-
-      .hero-title {
-        font-size: 42px;
-      }
-
-      .hero-badges {
-        gap: 8px;
-      }
-
-      .hero-badge {
-        font-size: 12px;
-        padding: 9px 12px;
-      }
-
-      .info-card {
-        padding: 14px;
-        border-radius: 18px;
-      }
-
-      .form-top,
-      .form-body {
-        padding-left: 22px;
-        padding-right: 22px;
+      .mini-card {
+        display: none;
       }
 
       .form-title {
-        font-size: 26px;
+        font-size: 23px;
       }
 
-      .grid-2 {
+      .form-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 0;
       }
 
       .program-ui {
         grid-template-columns: auto 1fr;
       }
 
-      .program-status {
+      .status {
         grid-column: 1 / -1;
         width: fit-content;
-        margin-left: 71px;
+        margin-left: 75px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .badge {
+        font-size: 11.5px;
+      }
+
+      .program-title {
+        font-size: 13.8px;
       }
     }
   </style>
 </head>
 <body>
+  <div class="decor star1">✦</div>
+  <div class="decor star2">✨</div>
+  <div class="decor heart1">♡</div>
+  <div class="decor flower1">🌸</div>
+
   <main class="page">
-    <section class="hero" aria-label="대광고 중학생 진로체험 소개">
-      <div class="eyebrow"><span class="eyebrow-dot"></span> DAEGWANG CAREER EXPERIENCE</div>
-
-      <h1 class="hero-title">
-        2026 중학생
-        <span>진로체험 신청</span>
+    <section class="hero">
+      <div class="ribbon">💗 DAEGWANG HIGH SCHOOL</div>
+      <h1>
+        나의 취향을 찾는<br />
+        <strong>진로체험 데이</strong>
       </h1>
-
-      <p class="hero-desc">
-        대광고등학교에서 나의 관심 분야를 직접 경험하고, <br>
-        미래 진로의 가능성을 발견해 보세요. <br>
-        미용·디자인 분야의 실습형 프로그램으로 준비했습니다.
+      <p>
+        미용과 디자인을 직접 경험하며 나에게 어울리는 미래를 발견해 보세요. 예쁘고 특별한 하루, 대광고에서 시작됩니다.
       </p>
-
-      <div class="hero-badges" aria-label="진로체험 특징">
-        <span class="hero-badge">#중학생 대상</span>
-        <span class="hero-badge">#실습 중심</span>
-        <span class="hero-badge">#미용계열</span>
-        <span class="hero-badge">#디자인계열</span>
-      </div>
-
-      <div class="info-panel">
-        <div class="info-card">
-          <div class="info-icon">✦</div>
-          <div>
-            <div class="info-title">신청 안내</div>
-            <div class="info-text">원하는 계열과 체험 프로그램을 선택해 주세요.</div>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">✓</div>
-          <div>
-            <div class="info-title">접수 확인</div>
-            <div class="info-text">신청 완료 후 담당자가 접수 내용을 확인합니다.</div>
-          </div>
-        </div>
+      <div class="badge-row">
+        <span class="badge">#중학생초대</span>
+        <span class="badge">#미용체험</span>
+        <span class="badge">#디자인체험</span>
+        <span class="badge">#감성실습</span>
       </div>
     </section>
 
-    <section class="form-card" aria-label="진로체험 신청서">
-      <div id="formWrap">
-        <div class="form-top">
-          <p class="form-kicker">APPLICATION FORM</p>
-          <h2 class="form-title">진로체험 신청 정보를 입력해 주세요</h2>
-          <p class="form-subtitle">모든 필수 항목을 입력한 뒤 신청을 완료해 주세요.</p>
-          <div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+    <section class="form-shell">
+      <div class="form-inner" id="formWrap">
+        <div class="form-head">
+          <div>
+            <p class="form-kicker">CAREER EXPERIENCE</p>
+            <h2 class="form-title">신청 정보를 입력해 주세요</h2>
+          </div>
+          <div class="mini-card">
+            <b>2026</b>
+            <span>진로체험 신청</span>
+          </div>
         </div>
 
-        <div class="form-body" id="formBody">
-          <div class="notice-box">
-            <div class="notice-title">개인정보 활용 동의</div>
-            <p class="notice-text">
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+        <div id="formBody">
+          <div class="notice">
+            <div class="notice-title">🌷 개인정보 활용 동의</div>
+            <p>
               원활한 진로체험 운영을 위해 이름, 성별, 연락처, 학교명, 학번 정보를 수집합니다. 수집된 정보는 프로그램 운영 목적으로만 사용됩니다.
             </p>
             <label class="consent-label">
               <input type="checkbox" id="consent" />
               <span class="check-ui"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" /></svg></span>
-              <span class="consent-copy">위 내용에 동의합니다</span>
+              <span class="consent-text">위 내용에 동의합니다</span>
             </label>
           </div>
 
-          <div class="grid-2">
+          <div class="form-grid">
             <div class="section">
               <div class="label-row"><label class="field-label" for="name">이름</label><span class="required">필수</span></div>
               <input class="input-field" type="text" id="name" placeholder="이름을 입력하세요" autocomplete="name" />
@@ -848,14 +827,12 @@
                 <label class="choice"><input type="radio" name="gender" value="여" /><span class="choice-ui">여</span></label>
               </div>
             </div>
-          </div>
 
-          <div class="section">
-            <div class="label-row"><label class="field-label" for="contact">연락처</label><span class="required">필수</span></div>
-            <input class="input-field" type="tel" id="contact" placeholder="010-0000-0000" maxlength="13" inputmode="numeric" autocomplete="tel" />
-          </div>
+            <div class="section full">
+              <div class="label-row"><label class="field-label" for="contact">연락처</label><span class="required">필수</span></div>
+              <input class="input-field" type="tel" id="contact" placeholder="010-0000-0000" maxlength="13" inputmode="numeric" autocomplete="tel" />
+            </div>
 
-          <div class="grid-2">
             <div class="section">
               <div class="label-row"><label class="field-label" for="school">학교명</label><span class="required">필수</span></div>
               <input class="input-field" type="text" id="school" placeholder="예: ○○중학교" />
@@ -865,37 +842,37 @@
               <div class="label-row"><label class="field-label" for="studentId">학번</label><span class="required">필수</span></div>
               <input class="input-field" type="text" id="studentId" placeholder="예: 30101" inputmode="numeric" />
             </div>
-          </div>
 
-          <div class="section">
-            <div class="label-row"><label class="field-label" for="course">희망 과정</label><span class="required">필수</span></div>
-            <div class="select-wrap">
-              <select class="input-field" id="course" onchange="handleCourseChange(this.value)">
-                <option value="" disabled selected>계열을 선택해 주세요</option>
-                <option value="beauty">미용계열</option>
-                <option value="design">디자인계열</option>
-              </select>
+            <div class="section full">
+              <div class="label-row"><label class="field-label" for="course">희망 과정</label><span class="required">필수</span></div>
+              <div class="select-wrap">
+                <select class="input-field" id="course" onchange="handleCourseChange(this.value)">
+                  <option value="" disabled selected>계열을 선택해 주세요</option>
+                  <option value="beauty">미용계열</option>
+                  <option value="design">디자인계열</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="section full" id="programSection" style="display:none;">
+              <div class="label-row"><label class="field-label">체험 프로그램 선택</label><span class="required">필수</span></div>
+              <div class="program-options" id="programOptions"></div>
             </div>
           </div>
 
-          <div class="section" id="programSection" style="display:none;">
-            <div class="label-row"><label class="field-label">체험 프로그램 선택</label><span class="required">필수</span></div>
-            <div class="program-options" id="programOptions"></div>
-          </div>
-
-          <button class="submit-btn" id="submitBtn" onclick="handleSubmit()">진로체험 신청 완료하기 →</button>
+          <button class="submit-btn" id="submitBtn" onclick="handleSubmit()">예쁜 진로체험 신청하기 ✨</button>
           <p class="footer-copy" id="footerTxt">대광고등학교 · 중학생 진로체험 신청</p>
         </div>
       </div>
 
       <div class="success-overlay" id="successOverlay">
-        <div class="success-inner">
+        <div class="success-box">
           <div class="success-icon">
             <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
           <h2 class="success-title">신청 완료!</h2>
           <p class="success-text">
-            정상적으로 접수되었습니다.<br />대광고등학교 진로체험에서 만나요 😊
+            정상적으로 접수되었습니다.<br />대광고에서 특별한 진로체험으로 만나요 💗
           </p>
         </div>
       </div>
@@ -917,7 +894,6 @@
     };
 
     const scriptUrl = 'https://script.google.com/macros/s/AKfycbzBG_0CjFPUIAHF-eyoTbL3-Zb9Gt0F_bTsRb2B3nj28dc50Yxec7exzYv9QEbyVvZG/exec';
-
     const requiredIds = ['consent', 'name', 'contact', 'school', 'studentId', 'course'];
 
     function showToast(message) {
@@ -945,18 +921,18 @@
         const isDisabled = p.closed ? 'disabled' : '';
         const closedClass = p.closed ? 'closed' : '';
         const statusText = p.closed ? '마감' : '신청 가능';
-        const monthDay = p.date.replace('월 ', '월\n').replace('일', '일');
+        const monthDay = p.date.replace('월 ', '월<br>').replace('일', '일');
 
         container.innerHTML += `
           <label class="program-card ${closedClass}">
             <input type="radio" name="program" value="${p.date} ${p.title}" ${isDisabled} onchange="updateProgress()" />
             <span class="program-ui">
-              <span class="program-datebox">${monthDay}</span>
+              <span class="date-bubble">${monthDay}</span>
               <span>
-                <span class="program-meta">${courseText} · 프로그램 ${index + 1}</span>
+                <span class="program-meta">${courseText} · ${index + 1}번 체험</span>
                 <span class="program-title">${p.title}</span>
               </span>
-              <span class="program-status">${statusText}</span>
+              <span class="status">${statusText}</span>
             </span>
           </label>`;
       });
@@ -976,8 +952,7 @@
       if (document.querySelector('input[name="gender"]:checked')) score += 1;
       if (document.querySelector('input[name="program"]:checked')) score += 1;
 
-      const total = 8;
-      const percent = Math.max(12, Math.round((score / total) * 100));
+      const percent = Math.max(12, Math.round((score / 8) * 100));
       document.getElementById('progressBar').style.width = percent + '%';
     }
 
@@ -1038,7 +1013,7 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }).catch(() => {
         showToast('오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
-        btn.textContent = '진로체험 신청 완료하기 →';
+        btn.textContent = '예쁜 진로체험 신청하기 ✨';
         btn.disabled = false;
       });
     }
